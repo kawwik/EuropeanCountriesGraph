@@ -1,0 +1,47 @@
+Albania - Greece Kosovo Macedonia Montenegro
+Andorra - France Spain
+Austria - Czech Germany Hungary Italy Liechtenstein Slovakia Slovenia Switzerland
+Belarus - Latvia Lithuania Poland Russia Ukraine
+Belgium - France Germany Luxembourg Netherlands
+BaH - Croatia Montenegro Serbia
+Bulgaria - Greece Macedonia Romania Serbia Turkey
+Croatia - BaH Hungary Montenegro Serbia Slovenia
+Cypruse - 
+Czech - Austria Germany Poland Slovakia
+Denmark - Germany
+Estonia - Latvia Russia
+Finland - Norway Sweden Russia
+France - Andorra Belgium Germany Italy Luxembourg Monaco Spain Switzerland
+Germany - Austria Belgium Czech Denmark France Luxembourg Netherlands Poland Switzerland
+Greece - Albania Bulgaria Turkey Macedonia
+Hungary - Austria Croatia Romania Serbia Slovakia Slovenia Ukraine
+Iceland - 
+Ireland - UK
+Italy - Austria France San_Marino Slovenia Switzerland Vatican
+Kosovo - Albania Montenegro Macedonia Serbia
+Latvia - Belarus Estonia Lithuania Russia
+Liechtenstein - Austria Switzerland
+Lithuania - Belarus Latvia Poland Russia
+Luxembourg - Belgium France Germany
+Macedonia - Albania Bulgaria Greece Kosovo Serbia
+Malta - 
+Moldova - Romania Ukraine
+Monaco - France
+Montenegro - Albania BaH Croatia Kosovo Serbia
+Netherlands - Belgium Germany
+Norway - Finland Sweden Russia
+Poland - Belarus Czech Germany Lithuania Russia Slovakia Ukraine
+Portugal - Spain
+Romania - Bulgaria Hungary Moldova Serbia Ukraine
+Russia - Belarus Estonia Finland Latvia Lithuania Norway Poland Ukraine
+San_Marino - Italy
+Serbia - BaH Bulgaria Croatia Hungary Kosovo Montenegro Macedonia Romania
+Slovakia - Austria Czech Hungary Poland Ukraine
+Slovenia - Austria Croatia Italy Hungary
+Spain - Andorra France Portugal
+Sweden - Finland Norway
+Switzerland - Austria France Italy Liechtenstein Germany
+Turkey - Bulgaria Greece 
+Ukraine - Belarus Hungary Moldova Poland Romania Russia Slovakia
+UK - Ireland
+Vatican - Italy
