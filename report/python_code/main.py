@@ -1,13 +1,13 @@
-from igraph import *
+import igraph as ig
 
-graph = Graph(47)  # Создаём граф на 47 вершин
+graph = ig.Graph(47)  # Создаём граф на 47 вершин
 graph.vs["name"] = [
     "Albania",
     "Andorra",
     "Austria",
     "Belarus",
     "Belgium",
-    "BaH",
+    "Bosnia and Herzegovina",
     "Bulgaria",
     "Croatia",
     "Cypruse",
@@ -38,7 +38,7 @@ graph.vs["name"] = [
     "Portugal",
     "Romania",
     "Russia",
-    "San_Marino",
+    "San-Marino",
     "Serbia",
     "Slovakia",
     "Slovenia",
@@ -56,7 +56,8 @@ CMap = {
     "Austria": 2,
     "Belarus": 3,
     "Belgium": 4,
-    "BaH": 5,
+    "BaH" : 5,
+    "Bosnia and Herzegovina": 5,
     "Bulgaria": 6,
     "Croatia": 7,
     "Cypruse": 8,
@@ -87,7 +88,7 @@ CMap = {
     "Portugal": 33,
     "Romania": 34,
     "Russia": 35,
-    "San_Marino": 36,
+    "San-Marino": 36,
     "Serbia": 37,
     "Slovakia": 38,
     "Slovenia": 39,
@@ -114,6 +115,8 @@ graph.simplify() # Удаляем кратные рёбра
 verticesToDel = [v for v in range(47) if v not in min(graph.components())]
 graph.delete_vertices(verticesToDel)
 
+#print(graph.get_adjacency())
+
 # Изменяем словарь вершин в соответствии с удалёнными вершинами
 CMap.clear()
 for i in range(graph.vcount()):
@@ -131,11 +134,27 @@ center = [graph.vs['name'][v] for v in range(vPower) if graph.eccentricity(v) ==
 vertexConnectivity = graph.vertex_connectivity()
 edgesConnectivity = graph.edge_connectivity()
 
+
 # (e)
 maximumCliques = graph.largest_cliques()
+print(len(maximumCliques))
+for clique in maximumCliques:
+    for countryNum in clique:
+        print(graph.vs[countryNum]['name'], end=', ')
+    print()
 
 # (f)
 maximumStableSets = graph.largest_independent_vertex_sets()
+print(len(maximumStableSets))
+print(len(maximumStableSets[0]))
+counter = 1
+outSets = open("MaxStableSets.txt", 'w')
+for stableSet in maximumStableSets:
+    print(str(counter) + ")", file=outSets, end=' ')
+    counter += 1
+    for countryNum in stableSet:
+        print(graph.vs[countryNum]['name'], end=', ', file=outSets)
+    print(file=outSets)
 
 # (l)
 components = graph.biconnected_components()
@@ -145,5 +164,24 @@ components = graph.biconnected_components()
 weights = open("Distances.txt", 'r')
 for line in weights:
     vertex1, vertex2 = line.split()[:2]
+    if vertex1 == "BaH":
+        vertex1 = "Bosnia and Herzegovina"
+    if vertex2 == "BaH":
+        vertex2 = "Bosnia and Herzegovina"
     weight = line.split()[2]
     graph.es.find(_from=vertex1, _to=vertex2)['weight'] = weight
+
+#Находим МСТ
+MST = graph.spanning_tree()
+
+# print(graph.es.find(_from=0, _to=1))
+weightedAdj = list(graph.get_adjacency())
+for edge in graph.es:
+    weightedAdj[edge.source][edge.target] = edge['weight']
+    weightedAdj[edge.target][edge.source] = edge['weight']
+
+outfile = open("weighet adjacency matrix", 'w')
+for row in weightedAdj:
+    for el in row:
+        print(el, end=' ', file=outfile)
+    print(file=outfile)
